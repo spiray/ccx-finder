@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A simple app to find plan name from a provided prefix.">
+    <meta name="theme-color" content="#343a40">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>CCX Finder</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="/" class="navbar-brand">CCX Finder</a>
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <div class="row pt-3">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <div class="form-row col-md-4">
+                                <label for="three-digits">Prefix</label>
+                                <input id="three-digits" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <div class="form-row col-md-4" id="group">
+                                <label for="group-num">Group #</label>
+                                <input id="group-num" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4" id="result-con">
+                        <span id="plan-type">Plan Type:</span>
+                        <span id="result"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script type="module" src="all.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "name": "CCX Finder",
+    "short_name": "CCX Finder",
+    "description": "A simple app to find plan name from a provided prefix.",
+    "start_url": "/",
+    "background_color": "#fafafa",
+    "theme_color": "#343a40",
+    "display": "standalone"
+}
