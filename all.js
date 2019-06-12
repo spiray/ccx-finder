@@ -10,56 +10,53 @@ var med = ["NJH", "NJN", "YKB", "YKD", "YKI", "YKK", "YKM", "YKO", "YKU"];
 var HLA = "ZJC";
 
 function setColor(color) {
-  resultP.style.color = color;
-  resultP.style.fontSize = "xx-large";
+    resultP.style.color = color;
+    resultP.style.fontSize = "xx-large";
 }
 
 function showResult(value) {
-  if (comm.includes(value)) {
-    resultP.textContent = "Commercial";
-  } else if (med.includes(value)) {
-    resultP.textContent = "Medicare Advantage";
-  } else if (value.startsWith(FED)) {
-    resultP.textContent = "Federal";
-  } else if (value === HLA) {
-    resultP.textContent = "HLA";
-  } else {
-    resultP.textContent = "Please enter a Group #";
-    setColor("#e0a800");
-    digitInput.innerHTML = "";
-    return false;
-  }
+    if (comm.includes(value)) {
+        resultP.textContent = "Commercial";
+    } else if (med.includes(value)) {
+        resultP.textContent = "Medicare Advantage";
+    } else if (value.startsWith(FED)) {
+        resultP.textContent = "Federal";
+    } else if (value === HLA) {
+        resultP.textContent = "HLA";
+    } else {
+        resultP.textContent = "Please enter a Group #";
+        setColor("#e0a800");
+        digitInput.innerHTML = "";
+        return false;
+    }
 
-  setColor("#228738");
-  digitInput.innerHTML = "";
+    setColor("#228738");
+    digitInput.innerHTML = "";
 }
 
 function showError() {
-  resultP.textContent = "Please enter 1 or 3 charachters...";
-  setColor("#c82334");
+    resultP.textContent = "Please enter 1 or 3 charachters...";
+    setColor("#c82334");
 }
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js");
-}
+digitInput.addEventListener("change", function(_ref) {
+    var value = _ref.target.value;
 
-digitInput.addEventListener("change", function (_ref) {
-  var value = _ref.target.value;
+    switch (value.length) {
+        case 1:
+            if (value.toUpperCase() === FED) showResult(value.toUpperCase());
+            break;
 
-  switch (value.length) {
-    case 1:
-      if (value.toUpperCase() === FED) showResult(value.toUpperCase());
-      break;
+        case 3:
+            return showResult(value.toUpperCase());
 
-    case 3:
-      return showResult(value.toUpperCase());
-
-    default:
-      return showError();
-  }
+        default:
+            return showError();
+    }
 });
-groupInput.addEventListener("change", function (_ref2) {
-  var value = _ref2.target.value;
-  if (hlaGroups.includes(value)) resultP.textContent = "HLA";else resultP.textContent = "Out of State";
-  setColor("#228738");
+groupInput.addEventListener("change", function(_ref2) {
+    var value = _ref2.target.value;
+    if (hlaGroups.includes(value)) resultP.textContent = "HLA";
+    else resultP.textContent = "Out of State";
+    setColor("#228738");
 });
