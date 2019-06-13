@@ -8,8 +8,6 @@
     margin-right: 5px;
 }
 
-#result-con {
-    background-color: lightgray;
-    border-radius: 8px;
-    padding: 5px;
+#clip-board {
+    fill: white;
 }
