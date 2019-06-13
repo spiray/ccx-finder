@@ -13,18 +13,18 @@ var HLA = "ZJC";
 
 function setColor(color) {
   resultP.style.color = color;
-  resultP.style.fontSize = "xx-large";
+  resultP.style.fontSize = "x-large";
 }
 
 function showResult(value) {
   if (comm.includes(value)) {
-    resultP.textContent = "Commercial";
+    resultP.textContent = "Horizon Carecentrix Commercial";
   } else if (med.includes(value)) {
-    resultP.textContent = "Medicare Advantage";
+    resultP.textContent = "Horizon Carecentrix Medicare Adv";
   } else if (value.startsWith(FED)) {
-    resultP.textContent = "Federal";
+    resultP.textContent = "Horizon Carecentrix FEP";
   } else if (value === HLA) {
-    resultP.textContent = "HLA";
+    resultP.textContent = "Horizon Carecentrix HLA";
   } else {
     resultP.textContent = "Please enter a Group #";
     setColor("#e0a800");
@@ -58,7 +58,7 @@ digitInput.addEventListener("change", function (_ref) {
 });
 groupInput.addEventListener("change", function (_ref2) {
   var value = _ref2.target.value;
-  if (hlaGroups.includes(value)) resultP.textContent = "HLA";else resultP.textContent = "Out of State";
+  if (hlaGroups.includes(value)) resultP.textContent = "Horizon Carecentrix HLA";else resultP.textContent = "HORIZON OUT OF STATE - CARE CENTRIX PRIMARY";
   setColor("#228738");
 }); // eslint-disable-next-line no-new
 
