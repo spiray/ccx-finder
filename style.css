@@ -11,3 +11,7 @@
 #clip-board {
     fill: white;
 }
+
+.card-text {
+    font-size: 1.3rem;
+}
