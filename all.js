@@ -77,7 +77,7 @@ function groupInputHandler(_ref2) {
   setColor("#228738");
 }
 
-if (localStorage.nickname.length > 0) {
+if (localStorage.nickname) {
   nicknameSelect.value = localStorage.nickname;
   digitInput.disabled = false;
   groupInput.disabled = false;
@@ -85,16 +85,9 @@ if (localStorage.nickname.length > 0) {
 
 nicknameSelect.addEventListener("change", function () {
   var val = nicknameSelect.options[nicknameSelect.selectedIndex].value;
-
-  if (val === "Choose a Nickname") {
-    digitInput.disabled = true;
-    groupInput.disabled = true;
-    localStorage.nickname = "";
-  } else {
-    digitInput.disabled = false;
-    groupInput.disabled = false;
-    localStorage.nickname = val;
-  }
+  digitInput.disabled = false;
+  groupInput.disabled = false;
+  localStorage.nickname = val;
 });
 digitInput.addEventListener("change", digitInputHandler);
 groupInput.addEventListener("change", groupInputHandler);
