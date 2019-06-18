@@ -77,9 +77,24 @@ function groupInputHandler(_ref2) {
   setColor("#228738");
 }
 
-if (localStorage.nickname) nicknameSelect.value = localStorage.nickname;
+if (localStorage.nickname.length > 0) {
+  nicknameSelect.value = localStorage.nickname;
+  digitInput.disabled = false;
+  groupInput.disabled = false;
+}
+
 nicknameSelect.addEventListener("change", function () {
-  localStorage.nickname = nicknameSelect.options[nicknameSelect.selectedIndex].value;
+  var val = nicknameSelect.options[nicknameSelect.selectedIndex].value;
+
+  if (val === "Choose a Nickname") {
+    digitInput.disabled = true;
+    groupInput.disabled = true;
+    localStorage.nickname = "";
+  } else {
+    digitInput.disabled = false;
+    groupInput.disabled = false;
+    localStorage.nickname = val;
+  }
 });
 digitInput.addEventListener("change", digitInputHandler);
 groupInput.addEventListener("change", groupInputHandler);
