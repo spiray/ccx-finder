@@ -88,6 +88,10 @@ nicknameSelect.addEventListener("change", function () {
   digitInput.disabled = false;
   groupInput.disabled = false;
   localStorage.nickname = val;
+  digitInput.value = "";
+  groupInput.value = "";
+  resultP.textContent = "";
+  id.textContent = "";
 });
 digitInput.addEventListener("change", digitInputHandler);
 groupInput.addEventListener("change", groupInputHandler);
