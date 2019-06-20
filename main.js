@@ -74,8 +74,8 @@ function groupInputHandler ({ target: { value } }) {
     resultP.textContent = "Horizon Carecentrix HLA";
     id.textContent = localStorage.nickname === "OHH" ? "(1893)" : "(4324)";
   } else {
-    resultP.textContent = "HORIZON OUT OF STATE - CARE CENTRIX PRIMARY";
-    id.textContent = "(1060)";
+    resultP.textContent = localStorage.nickname === "OHH" ? "HORIZON OUT OF STATE - CARE CENTRIX PRIMARY" : "BlueCard NJ HZNCCX (Royal/FC)";
+    id.textContent = localStorage.nickname === "OHH" ? "(1060)" : "(1985)";
   }
   setColor("#228738");
 }
