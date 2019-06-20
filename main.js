@@ -117,8 +117,11 @@ new ClipboardJS(".btn");
 send.addEventListener("click", () => {
 
   emailjs.send("smtp_server", "ccx_finder_support", {
-    from   : from.value,
-    message: message.value,
+    from     : from.value,
+    brightree: localStorage.nickname || "None yet",
+    prefix   : digitInput.value,
+    groupId  : groupInput.value,
+    message  : message.value,
   });
   from.value = "";
   message.value = "";
