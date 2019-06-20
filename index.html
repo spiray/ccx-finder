@@ -10,14 +10,43 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="https://rawcdn.githack.com/zenorocha/clipboard.js/v2.0.4/dist/clipboard.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        var _0x27b8 = ['init', 'user_tz1BNcb7eLj242a7skirQ'];
+        (function(_0x44c879, _0x106d9f) {
+            var _0xc93408 = function(_0x3a730b) {
+                while (--_0x3a730b) {
+                    _0x44c879['push'](_0x44c879['shift']());
+                }
+            };
+            _0xc93408(++_0x106d9f);
+        }(_0x27b8, 0x11c));
+        var _0x1621 = function(_0x647e8, _0x3b22f8) {
+            _0x647e8 = _0x647e8 - 0x0;
+            var _0x56d223 = _0x27b8[_0x647e8];
+            return _0x56d223;
+        };
+        (function() {
+            emailjs[_0x1621('0x0')](_0x1621('0x1'));
+        }());
+    </script>
     <title>CCX Finder</title>
 </head>
 
 <body>
     <nav>
-        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar navbar-expand-sm navbar-dark bg-dark">
             <a href="/ccx-finder" class="navbar-brand">CCX Finder</a>
+            <div class="collapse navbar-collapse">
+                <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#contact-modal">Report an Issue</button>
+            </div>
         </div>
     </nav>
     <main>
@@ -34,19 +63,19 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 mt-4">
                         <div class="form-row">
                             <label for="three-digits">Prefix</label>
                             <input id="three-digits" type="text" class="form-control" disabled>
                         </div>
                     </div>
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 mt-4">
                         <div class="form-row" id="group">
                             <label for="group-num">Group #</label>
                             <input id="group-num" type="text" class="form-control" disabled>
                         </div>
                     </div>
-                    <div class="card col-sm-12">
+                    <div class="card col-sm-12 mt-4 ml-2">
                         <div class="card-body" id="result-con">
                             <span class="card-title" id="plan-type">Plan Type:</span>
                             <span class="card-text" id="result"> </span>
@@ -68,6 +97,36 @@
                         </p>
                         <p class="card-text"><span class="font-weight-bold">2.</span> Enter the 3 character prefix into the Prefix input and press Enter. You will then be told which plan it is or asked to enter a group #.</p>
                         <p class="card-text"><span class="font-weight-bold">3.</span> You can then use the button with the clipboard on it to copy the plan name and paste it into Brightree.</p>
+                        <p class="card-text"><span class="font-weight-bold">4.</span> If anything occurs out of the oridnary or if you experience any bugs please click the "Report an Issue" button in the top right corner and follow instructions from there.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contact-modal-label">Issue Report</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="sender-name" class="col-form-label">From:</label>
+                                <input id="report-from" type="text" class="form-control" id="sender-name" placeholder="Enter your full name....">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea id="report-message" placeholder="Please enter a detailed report of the bug/issue that you experienced." class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="send-report" type="button" class="btn btn-primary" data-dismiss="modal">Send
+                            Report</button>
                     </div>
                 </div>
             </div>

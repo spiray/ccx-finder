@@ -10,6 +10,9 @@ const groupInput = document.getElementById("group-num");
 const id = document.getElementById("id");
 const nicknameSelect = document.getElementById("nickname-select");
 const digitInput = document.getElementById("three-digits");
+const from = document.getElementById("report-from");
+const message = document.getElementById("report-message");
+const send = document.getElementById("send-report");
 
 // End of Variables
 
@@ -83,6 +86,7 @@ function groupInputHandler ({ target: { value } }) {
 // End of Functions
 
 // Main Program
+
 if (localStorage.nickname) {
   nicknameSelect.value = localStorage.nickname;
   digitInput.disabled = false;
@@ -109,5 +113,15 @@ groupInput.addEventListener("change", groupInputHandler);
 
 // eslint-disable-next-line no-new
 new ClipboardJS(".btn");
+
+send.addEventListener("click", () => {
+
+  emailjs.send("smtp_server", "ccx_finder_support", {
+    from   : from.value,
+    message: message.value,
+  });
+  from.value = "";
+  message.value = "";
+});
 
 // End of Program
