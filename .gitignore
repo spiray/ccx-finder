@@ -1,7 +1,4 @@
 node_modules
-main.js
-package.json
 sw.js
-.babelrc
 .eslintignore
 package-lock.json
