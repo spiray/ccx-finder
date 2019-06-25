@@ -18,10 +18,6 @@ const send = document.getElementById("send-report");
 
 // Functions
 
-// function sendData () {
-//   navigator.sendBeacon("https://ccx-finder-analytics.herokuapp.com/");
-// }
-
 function setColor (color) {
   resultP.style.color = color;
   resultP.style.fontSize = "x-large";
@@ -92,8 +88,6 @@ if (localStorage.nickname) {
   digitInput.disabled = false;
   groupInput.disabled = false;
 }
-
-// SendData();
 
 nicknameSelect.addEventListener("change", () => {
   const val = nicknameSelect.options[nicknameSelect.selectedIndex].value;
