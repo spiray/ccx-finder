@@ -25,16 +25,16 @@ function setColor (color) {
 
 function showResult (value) {
   if (comm.includes(value)) {
-    resultP.textContent = "Horizon Carecentrix Commercial";
+    resultP.textContent = localStorage.nickname === "OHH" ? "Horizon Carecentrix Commercial" : "BLUE - NJ - HORIZON CCX - COMMERCIAL";
     id.textContent = localStorage.nickname === "OHH" ? "(1890)" : "(4317)";
   } else if (med.includes(value)) {
-    resultP.textContent = "Horizon Carecentrix Medicare Adv";
+    resultP.textContent = localStorage.nickname === "OHH" ? "Horizon Carecentrix Medicare Adv" : "BLUE - NJ - HORIZON CCX - MEDICARE";
     id.textContent = localStorage.nickname === "OHH" ? "(1892)" : "(4319)";
   } else if (value.startsWith(FED)) {
-    resultP.textContent = "Horizon Carecentrix FEP";
+    resultP.textContent = localStorage.nickname === "OHH" ? "Horizon Carecentrix FEP" : "BLUE - NJ - HORIZON CCX - FEP";
     id.textContent = localStorage.nickname === "OHH" ? "(1891)" : "(4318)";
   } else if (value === HLA) {
-    resultP.textContent = "Horizon Carecentrix HLA";
+    resultP.textContent = localStorage.nickname === "OHH" ? "Horizon Carecentrix HLA" : "BLUE - NJ - HORIZON CCX - HLA";
     id.textContent = localStorage.nickname === "OHH" ? "(1893)" : "(4324)";
   } else {
     resultP.textContent = "Please enter a Group #";
